@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="100%" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Content -->
+                <af:panelFormLayout id="pfl1">
+                    <af:outputText value="we are in #{pageFlowScope.mode eq 'create'? 'create' : 'edit'} mode" id="ot1"/>
+                    <af:inputText value="#{bindings.RegionId.inputValue}" label="#{bindings.RegionId.hints.label}"
+                                  required="#{bindings.RegionId.hints.mandatory}" columns="#{bindings.RegionId.hints.displayWidth}"
+                                  maximumLength="#{bindings.RegionId.hints.precision}" shortDesc="#{bindings.RegionId.hints.tooltip}" id="it1"
+                                  disabled="#{pageFlowScope.mode ne 'create'}">
+                        <f:validator binding="#{bindings.RegionId.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.RegionId.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.RegionName.inputValue}" label="#{bindings.RegionName.hints.label}"
+                                  required="#{bindings.RegionName.hints.mandatory}" columns="#{bindings.RegionName.hints.displayWidth}"
+                                  maximumLength="#{bindings.RegionName.hints.precision}" shortDesc="#{bindings.RegionName.hints.tooltip}" id="it2">
+                        <f:validator binding="#{bindings.RegionName.validator}"/>
+                    </af:inputText>
+                    <f:facet name="footer">
+                        <af:panelGroupLayout id="pgl2">
+                            <af:button text="Commit" id="b2" action="commit"/>
+                            <af:button text="Rollback" id="b1" immediate="true" action="rollback">
+                                <af:resetActionListener/>
+                            </af:button>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                </af:panelFormLayout>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</ui:composition>

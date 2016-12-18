@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="index.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Header -->
+                        <af:outputText value="Task Flow Parameter" id="ot1" inlineStyle="font-size:x-large;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Content -->
+                        <af:panelGroupLayout layout="vertical" id="pgl2">
+                            <af:panelHeader text="Regions" id="ph1">
+                                <af:query id="qryId1" headerText="Search" disclosed="true" value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                                          model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                          queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                          queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                                          resultComponentId="::pc1:resId1"/>
+                            </af:panelHeader>
+                            <af:panelCollection id="pc1">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar">
+                                    <af:toolbar id="t1">
+                                        <af:button text="Create new..." id="b1" actionListener="#{bindings.CreateInsert.execute}" action="show">
+                                            <af:setPropertyListener from="#{'create'}" to="#{pageFlowScope.mode}" type="action"/>
+                                        </af:button>
+                                        <af:button text="Edit current..." id="b2" action="show">
+                                            <af:setPropertyListener from="#{'edit'}" to="#{pageFlowScope.mode}" type="action"/>
+                                        </af:button>
+                                    </af:toolbar>
+                                </f:facet>
+                                <f:facet name="statusbar"/>
+                                <af:table value="#{bindings.RegionsView1.collectionModel}" var="row" rows="#{bindings.RegionsView1.rangeSize}"
+                                          emptyText="#{bindings.RegionsView1.viewable ? 'No data to display.' : 'Access Denied.'}" rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.RegionsView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.RegionsView1.collectionModel.makeCurrent}" rowSelection="single"
+                                          fetchSize="#{bindings.RegionsView1.rangeSize}" filterModel="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                                          filterVisible="true" queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}" varStatus="vs" id="resId1"
+                                          partialTriggers="::b1">
+                                    <af:column sortProperty="#{bindings.RegionsView1.hints.RegionId.name}" filterable="true" sortable="true"
+                                               headerText="#{bindings.RegionsView1.hints.RegionId.label}" id="resId1c1">
+                                        <af:outputText value="#{row.RegionId}" shortDesc="#{bindings.RegionsView1.hints.RegionId.tooltip}" id="ot2">
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.RegionsView1.hints.RegionId.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.RegionsView1.hints.RegionName.name}" filterable="true" sortable="true"
+                                               headerText="#{bindings.RegionsView1.hints.RegionName.label}" id="resId1c2">
+                                        <af:outputText value="#{row.RegionName}" shortDesc="#{bindings.RegionsView1.hints.RegionName.tooltip}" id="ot3"/>
+                                    </af:column>
+                                </af:table>
+                            </af:panelCollection>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

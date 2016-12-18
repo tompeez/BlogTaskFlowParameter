@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.16.48" id="regionPageDef" Package="de.hahn.blog.taskflowparameter.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RegionsView1" RangeSize="25" DataControl="BTFPAppModuleDataControl" id="RegionsView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="RegionsView1Iterator" id="RegionId">
+      <AttrNames>
+        <Item Value="RegionId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RegionsView1Iterator" id="RegionName">
+      <AttrNames>
+        <Item Value="RegionName"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="BTFPAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="BTFPAppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

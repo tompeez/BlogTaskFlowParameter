@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.16.48" id="DataBindings" SeparateXMLFiles="false"
+             Package="de.hahn.blog.taskflowparameter.view"
+             ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding" className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/region.jsff" usageId="de_hahn_blog_taskflowparameter_view_regionPageDef"/>
+    <page path="/index.jsf" usageId="de_hahn_blog_taskflowparameter_view_indexPageDef"/>
+    <page path="/Region.jsf" usageId="de_hahn_blog_taskflowparameter_view_RegionPageDef"/>
+    <page path="/WEB-INF/region-edit-create-btf.xml#region-edit-create-btf@Commit"
+          usageId="de_hahn_blog_taskflowparameter_view_region_edit_create_btf_region_edit_create_btf_CommitPageDef"/>
+    <page path="/WEB-INF/region-edit-create-btf.xml#region-edit-create-btf@Rollback"
+          usageId="de_hahn_blog_taskflowparameter_view_region_edit_create_btf_region_edit_create_btf_RollbackPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="de_hahn_blog_taskflowparameter_view_regionPageDef" path="de.hahn.blog.taskflowparameter.view.pageDefs.regionPageDef"/>
+    <page id="de_hahn_blog_taskflowparameter_view_indexPageDef" path="de.hahn.blog.taskflowparameter.view.pageDefs.indexPageDef"/>
+    <page id="de_hahn_blog_taskflowparameter_view_RegionPageDef" path="de.hahn.blog.taskflowparameter.view.pageDefs.RegionPageDef"/>
+    <page id="de_hahn_blog_taskflowparameter_view_region_edit_create_btf_region_edit_create_btf_CommitPageDef"
+          path="de.hahn.blog.taskflowparameter.view.pageDefs.region_edit_create_btf_region_edit_create_btf_CommitPageDef"/>
+    <page id="de_hahn_blog_taskflowparameter_view_region_edit_create_btf_region_edit_create_btf_RollbackPageDef"
+          path="de.hahn.blog.taskflowparameter.view.pageDefs.region_edit_create_btf_region_edit_create_btf_RollbackPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="BTFPAppModuleDataControl" Package="de.hahn.blog.taskflowparameter.model.adfbc.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true" SupportsFindMode="true" SupportsRangesize="true"
+                     SupportsResetState="true" SupportsSortCollection="true" Configuration="BTFPAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

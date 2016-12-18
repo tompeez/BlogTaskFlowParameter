@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.16.48" id="region_edit_create_btf_region_edit_create_btf_RollbackPageDef"
+                Package="de.hahn.blog.taskflowparameter.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="BTFPAppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

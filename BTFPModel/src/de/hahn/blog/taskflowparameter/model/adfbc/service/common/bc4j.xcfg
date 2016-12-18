@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="de.hahn.blog.taskflowparameter.model.adfbc.service.BTFPAppModule">
+    <AppModuleConfig name="BTFPAppModuleLocal" jbo.project="de.hahn.blog.taskflowparameter.model.BTFPModel"
+                     ApplicationName="de.hahn.blog.taskflowparameter.model.adfbc.service.BTFPAppModule" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/HrConnDS"/>
+      <Security AppModuleJndiName="de.hahn.blog.taskflowparameter.model.adfbc.service.BTFPAppModule"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="BTFPAppModuleShared" jbo.project="de.hahn.blog.taskflowparameter.model.BTFPModel"
+                     ApplicationName="de.hahn.blog.taskflowparameter.model.adfbc.service.BTFPAppModule" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/HrConnDS"/>
+      <Security AppModuleJndiName="de.hahn.blog.taskflowparameter.model.adfbc.service.BTFPAppModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>
