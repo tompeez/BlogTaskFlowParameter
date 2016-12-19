@@ -22,6 +22,5 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="RegionsView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
   </bindings>
 </pageDefinition>
