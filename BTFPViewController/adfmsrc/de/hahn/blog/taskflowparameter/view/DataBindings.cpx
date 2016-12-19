@@ -14,6 +14,8 @@
           usageId="de_hahn_blog_taskflowparameter_view_region_edit_create_btf_region_edit_create_btf_CommitPageDef"/>
     <page path="/WEB-INF/region-edit-create-btf.xml#region-edit-create-btf@Rollback"
           usageId="de_hahn_blog_taskflowparameter_view_region_edit_create_btf_region_edit_create_btf_RollbackPageDef"/>
+    <page path="/WEB-INF/region-edit-create-btf.xml#region-edit-create-btf@CreateInsert"
+          usageId="de_hahn_blog_taskflowparameter_view_region_edit_create_btf_region_edit_create_btf_CreateInsertPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="de_hahn_blog_taskflowparameter_view_regionPageDef" path="de.hahn.blog.taskflowparameter.view.pageDefs.regionPageDef"/>
@@ -23,6 +25,8 @@
           path="de.hahn.blog.taskflowparameter.view.pageDefs.region_edit_create_btf_region_edit_create_btf_CommitPageDef"/>
     <page id="de_hahn_blog_taskflowparameter_view_region_edit_create_btf_region_edit_create_btf_RollbackPageDef"
           path="de.hahn.blog.taskflowparameter.view.pageDefs.region_edit_create_btf_region_edit_create_btf_RollbackPageDef"/>
+    <page id="de_hahn_blog_taskflowparameter_view_region_edit_create_btf_region_edit_create_btf_CreateInsertPageDef"
+          path="de.hahn.blog.taskflowparameter.view.pageDefs.region_edit_create_btf_region_edit_create_btf_CreateInsertPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="BTFPAppModuleDataControl" Package="de.hahn.blog.taskflowparameter.model.adfbc.service"

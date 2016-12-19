@@ -26,7 +26,7 @@
                                 <f:facet name="menus"/>
                                 <f:facet name="toolbar">
                                     <af:toolbar id="t1">
-                                        <af:button text="Create new..." id="b1" actionListener="#{bindings.CreateInsert.execute}" action="show">
+                                        <af:button text="Create new..." id="b1" action="show">
                                             <af:setPropertyListener from="#{'create'}" to="#{pageFlowScope.mode}" type="action"/>
                                         </af:button>
                                         <af:button text="Edit current..." id="b2" action="show">
